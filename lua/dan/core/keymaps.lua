@@ -29,8 +29,8 @@ keymap.set("n", "<leader>bx", ":bd<CR>", { desc = "Close current buffer" })
 keymap.set("n", "<leader>bd", ":bp|bd #<CR>", { desc = "Delete current buffer" })
 
 -- Windows
-keymap.set("n", "<leader>w-", "<C-w>v", { desc = "Split window vetically" })
-keymap.set("n", "<leader>w|", "<C-w>s", { desc = "Split window horizontally" })
+keymap.set("n", "<leader>w|", "<C-w>v", { desc = "Split window vetically" })
+keymap.set("n", "<leader>w-", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>we", "<C-w>=", { desc = "Makes split equal size" })
 keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current split" })
 keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Move to left window" })
