@@ -2,13 +2,15 @@ return {
         {
                 "tpope/vim-fugitive",
                 config = function()
-                        vim.keymap.set("n", "<leader>ga", ":Git add .<CR>", { desc = "Git add all files in current directory" })
+                        vim.keymap.set("n", "<leader>gg", ":Git <CR>", { desc = "Git interactive" })
+                        vim.keymap.set("n", "<leader>gac", ":Git add <CR>", { desc = "Git add current buffer" })
+                        vim.keymap.set("n", "<leader>ga.", ":Git add .<CR>", { desc = "Git add all files in current directory" })
                         vim.keymap.set("n", "<leader>gc", ":Git commit <CR>", { desc = "Git commit" })
                         vim.keymap.set("n", "<leader>gp", ":Git push <CR>", { desc = "Git push" })
                         vim.keymap.set("n", "<leader>gl", ":Git log <CR>", { desc = "Git log" })
-                        vim.keymap.set("n", "<leader>gl", ":Git log <CR>", { desc = "Git log" })
-                        vim.keymap.set("n", "<leader>gd", ":Git diff <CR>", { desc = "Git diff" })
-                        vim.keymap.set("n", "<leader>gs", ":Gdiffsplit <CR>", { desc = "Git diff split" })
+                        vim.keymap.set("n", "<leader>gs", ":Git status <CR>", { desc = "Git status" })
+                        vim.keymap.set("n", "<leader>gdd", ":Git diff <CR>", { desc = "Git diff" })
+                        vim.keymap.set("n", "<leader>gds", ":Gdiffsplit <CR>", { desc = "Git diff split" })
                 end,
         },
         {
