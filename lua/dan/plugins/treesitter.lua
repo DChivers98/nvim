@@ -11,6 +11,10 @@ return {
 
     -- configure treesitter
     treesitter.setup({ -- enable syntax highlighting
+      sync_install = false,
+      auto_install = true,
+      ignore_install = {},
+      modules = {},
       highlight = {
         enable = true,
       },
@@ -44,6 +48,7 @@ return {
         "python",
         "rust",
         "elixir",
+        "heex",
         "php",
         "regex",
         "sql",
