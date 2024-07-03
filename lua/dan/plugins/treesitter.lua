@@ -48,6 +48,7 @@ return {
         "python",
         "rust",
         "elixir",
+        "eex",
         "heex",
         "php",
         "regex",
