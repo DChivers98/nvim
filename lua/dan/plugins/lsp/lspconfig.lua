@@ -85,13 +85,6 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["graphql"] = function()
-				-- configure graphql language server
-				lspconfig["graphql"].setup({
-					capabilities = capabilities,
-					filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
-				})
-			end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({
@@ -112,7 +105,36 @@ return {
 			["elixirls"] = function()
 				lspconfig["elixirls"].setup({
 					cmd = { "elixir-ls" },
-					capabilities = require("cmp_nvim_lsp").default_capabilities(),
+					capabilities = capabilities,
+					filetypes = { "elixir", "eelixir", "heex" },
+					settings = { elixirLS = { dialyzerEnabled = false } },
+				})
+			end,
+			["tailwindcss"] = function()
+				lspconfig["tailwindcss"].setup({
+					filetypes = { "html", "elixir", "eelixir", "heex" },
+					init_options = {
+						userLanguages = {
+							elixir = "html-eex",
+							eelixir = "html-eex",
+							heex = "html-eex",
+						},
+						settings = {
+							tailwindCSS = {
+								experimental = {
+									classRegex = {
+										'class[:]\\s*"([^"]*)"',
+									},
+								},
+							},
+						},
+					},
+				})
+			end,
+			["emmet_ls"] = function()
+				lspconfig["emmet_ls"].setup({
+					capabilities = capabilities,
+					filetypes = { "html", "css", "elixir", "eelixir", "heex" },
 				})
 			end,
 		})
