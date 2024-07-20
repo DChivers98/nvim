@@ -112,6 +112,7 @@ return {
 			end,
 			["tailwindcss"] = function()
 				lspconfig["tailwindcss"].setup({
+					capabilities = capabilities,
 					filetypes = { "html", "elixir", "eelixir", "heex" },
 					init_options = {
 						userLanguages = {
