@@ -22,5 +22,17 @@ return {
 		vim.keymap.set("t", "<leader>lg", function()
 			lazygit:toggle()
 		end, { desc = "Toggle [L]azy[G]it" })
+
+		-- LazyDocker terminal instance
+		local lazygit = fterm:new({
+			cmd = "lazydocker",
+		})
+
+		vim.keymap.set("n", "<leader>ld", function()
+			lazygit:toggle()
+		end, { desc = "Toggle [L]azy[G]it" })
+		vim.keymap.set("t", "<leader>lg", function()
+			lazygit:toggle()
+		end, { desc = "Toggle [L]azy[G]it" })
 	end,
 }
