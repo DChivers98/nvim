@@ -27,10 +27,10 @@ return {
 
 				-- set keybinds
 				opts.desc = "Show LSP references"
-				keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+				keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
-				opts.desc = "Go to declaration"
-				keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+				keymap.set("n", "gd", vim.lsp.buf.definition, opts) -- Jump to definition
+				keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- Jump to declaration
 
 				opts.desc = "Show LSP definitions"
 				keymap.set("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
@@ -83,6 +83,25 @@ return {
 			function(server_name)
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
+				})
+			end,
+			["pyright"] = function()
+				local venv_path = vim.fn.getcwd() .. "/.venv"
+				local python_path = venv_path .. "/bin/python"
+
+				lspconfig["pyright"].setup({
+					capabilities = capabilities,
+					settings = {
+						python = {
+							pythonPath = python_path,
+							analysis = {
+								autoSearchPaths = true,
+								useLibraryCodeForTypes = true,
+								diagnosticMode = "workspace",
+								typeCheckingMode = "basic",
+							},
+						},
+					},
 				})
 			end,
 			["lua_ls"] = function()

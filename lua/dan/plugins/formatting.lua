@@ -15,7 +15,6 @@ return {
 				json = { "prettier" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
-				graphql = { "prettier" },
 				java = { "prettier" },
 				php = { "prettier" },
 				lua = { "stylua" },
@@ -29,7 +28,7 @@ return {
 			},
 		})
 
-		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+		vim.keymap.set({ "n", "v" }, "<leader>fx", function()
 			conform.format({
 				lsp_fallback = true,
 				async = false,
